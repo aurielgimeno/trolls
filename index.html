@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1,user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Trolls - True or False Challenge</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/style-custom.css" />
+    
+    <script type="text/javascript" src="js/quizArray.js"></script><!-- for quiz QUESTIONS -->
+    <!--twitter api START-->
+    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+    <!--twitter api END-->
+  </head>
+  <body>
+    <div class="customModal" id="rsgTimerModal">
+      <div class="customModalContainer">
+        <div class="customModalContent">
+          <h1 id="rsgTimer"></h1>
+          <!--<input type="text" name="" id="rsgTimer" /><br /><!-- TIMER -->
+        </div>
+      </div>
+    </div>
+    <div id="splashScreen" class="splashScreen">
+      <div class="row splashImages" style="display:none;">
+        <img src="img/pmaw_logo.png" alt=""  class="img-thumbnail" style="margin:0 auto;display:block;background:none;border:0px;"/>
+        <img src="img/pmaw_txt.png" alt=""  class="img-thumbnail" style="margin:0 auto;display:block;background:none;border:0px;"/>
+      </div>
+    </div>
+    <div class="mainBg" >
+      <div class="topDark"></div>
+      <div class="bottomDark"></div>
+    </div>
+    <div class="modalDarkBg"></div>
+    <div class="readySetGo" style="display:none">
+      <h1 style="color:#ffffff">READY</h1>
+    </div>
+    <div id="wrapper" >
+      <!-- modal REGISTER -->
+      <!-- page-wrapper4-bg START-->
+      <div id="page-wrapper4-bg" style="z-index:400;position:fixed;background:rgba(0,0,0,.2);width:100%;height:100%;left:0;right:0;top:0;bottom:0;"></div>
+      <div id="page-wrapper4" style="position:fixed;z-index:401;width:90%;left:5%;">
+        <!-- board-modal-register START -->
+        <div class="row windowContainer4 board" id="board-modal-register" style="position:relative">
+          <div class="col-sm-12 col-lg-12">
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="panel panel-board" >
+                  <div class="panel-body" style="background:none; border:0">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="panel"  style="background:none; border:0">
+                          <div class="panel-body"  >
+                            <img id="btn-up-wrapper4" src="img/btn_close.png" alt="" class="img-thumbnail btn_close col-lg-1 col-md-3 col-sm-2 col-xs-4 borderless noBg"/>
+                            <!-- <input type="button" value="Close Wrapper 4" id="btn-up-wrapper4"/> -->
+                            <div class="panel-header">
+                              <h2>REGISTER</h2>
+                            </div>
+                            <!--<div id="popuptext"></div>-->
+                            <form role="form" id="regForm" action="javascript:verifyRegfirst()" style="color:black;text-align:left;color:#ffffff">
+                              <h2 id="reg_popuptext"></h2>
+                              <input type="text" name="username" id="username" placeholder="username" class="form-control" required /><br />
+                              <input type="email" name="email" id="uemail" placeholder="example@yahoo.com" class="form-control" required /><br />
+                              <input type="password"  name="password" id="upassword" placeholder="password" class="form-control"/><br />
+                              <input type="password"  id="ucpassword" placeholder="confirm password" class="form-control"/><br />
+                              <button type="submit"  id="registerUser" class="btn btn-warning col-lg-12 col-md-12 col-sm-12 col-xs-12 fontComixLoud">
+                              <img src="img/txt_submit.png" class="img-thumbnail col-lg-2 col-md-4 col-sm-4 col-xs-8 col-lg-offset-5 col-md-offset-4 col-sm-offset-4 col-xs-offset-2 borderless noBg" alt="" />
+                              </button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- board-modal-register END -->
+      </div>
+      <!-- page-wrapper4-bg END -->
+      <!-- modal Login -->
+      <!-- page-wrapper3-bg START-->
+      <div id="page-wrapper3-bg" style="z-index:300;position:fixed;background:rgba(0,0,0,.2);width:100%;height:100%;left:0;right:0;top:0;bottom:0;"></div>
+      <div id="page-wrapper3" style="position:fixed;z-index:301;width:90%;left:5%;">
+        <!-- board-modal-login START -->
+        <div class="row windowContainer3 board"  id="board-modal-login" style="position:relative">
+          <div class="col-sm-12 col-lg-12">
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="panel panel-board" >
+                  <div class="panel-body" style="background:none; border:0">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="panel"  style="background:none; border:0">
+                          <img id="btn-up-wrapper3" class="img-thumbnail btn_close col-lg-1 col-md-3 col-sm-2 col-xs-4 borderless noBg" src="img/btn_close.png" alt=""  style=""/>
+                          <!--<input type="button" value="Close Wrapper 3" id="btn-up-wrapper3"/>-->
+                          <div id="txt-username"></div>
+                          <div class="panel-body" id="loginform_container" >
+                            <div class="panel-header">
+                              <h2>LOG IN</h2>
+                            </div>
+                            <form id="loginform" action="javascript:verifyLoginfirst()">
+                              <div id="login_popuptext">
+                                <h2></h2>
+                              </div>
+                              <input type="text" name="name" class="form-control" id="login_username" placeholder="username"><br />
+                              <input type="password" class="form-control" name="pw" id="login_password" placeholder="Password"><br />
+                              <button  type="submit" id="login_btnlogin" class="btn btn-warning col-lg-12 col-xs-12 col-md-12 col-sm-12 fontComixLoud">
+                              <img src="img/txt_login.png" class="img-thumbnail col-lg-2 col-md-4 col-sm-4 col-xs-8 col-lg-offset-5 col-md-offset-4 col-sm-offset-4 col-xs-offset-2 borderless noBg" alt="" />
+                              </button>
+                              <!--<input type="submit" value="LOG IN" id="login_btnlogin" class="btn btn-warning col-lg-12 col-xs-12 col-md-12 col-sm-12 fontComixLoud" />-->									
+                            </form>
+                          </div>
+                          <button id="my-logout" class="btn btn-warning col-lg-12 col-xs-12 col-md-12 col-sm-12 " style="font-family:Comix Loud" >
+                          <img src="img/txt_logout.png" class="img-thumbnail col-lg-2 col-md-4 col-sm-4 col-xs-8 col-lg-offset-5 col-md-offset-4 col-sm-offset-4 col-xs-offset-2 borderless noBg" alt="" />
+                          </button>
+                          <button id="btn-register" class="btn btn-warning col-lg-12 col-xs-12 col-md-12 col-sm-12 " style="font-family:Comix Loud" >
+                          <img src="img/txt_register.png" class="img-thumbnail col-lg-2 col-md-4 col-sm-4 col-xs-8 col-lg-offset-5 col-md-offset-4 col-sm-offset-4 col-xs-offset-2 borderless noBg" alt="" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="row ">
+                        <div class="panel col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background:none; border:0">
+                          <div class="panel-body">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- board-modal-login END -->	
+      </div>
+      <!-- page-wrapper3-bg END-->
+      <!-- modal Game over -->
+      <!-- page-wrapper2-bg START -->
+      <div id="page-wrapper2-bg" style="z-index:200;position:fixed;background:rgba(0,0,0,.2);width:100%;height:100%;left:0;right:0;top:0;bottom:0;"></div>
+      <div id="page-wrapper2" style="position:fixed;z-index:201;width:90%;left:5%;">
+        <!-- board-game-over START -->
+        <div class="row windowContainer2 board" id="board-game-over2" style="position:relative;">
+          <div class="col-sm-12 col-lg-12">
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="panel panel-board" >
+                  <div class="panel-body" style="background:none; border:0">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class=""  style="background:none; border:0">
+                          <div class=""  >
+                            <form role="form" >
+                              <div class="form-group gameOverText">
+                                <h1 style="">GAME OVER!</h1>
+                                <h3 id="txt-game-over-score"></h3>
+                                <h6>YOUR SCORE!</h6>
+                                <!--<center><a href="https://twitter.com/share" class="twitter-share-button" data-via="DGteam404" data-text="" data-hashtag="OPMhenyo" data-url="https://www.opmhenyo.url.ph/" data-lang="en" data-edit="false">Tweet #TFchallenge</a></center>-->
+                                <br />
+                                <h4 id="txt-previous-score"></h4>
+                                <h6>PREVIOUS SCORE</h6>
+                                <div id="game_over_page_msg" ></div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <button id="btn-play-again" class="btn btn-warning col-lg-12 col-xs-12 col-md-12 col-sm-12 " style="font-family:Comix Loud" >
+                        <img src="img/txt_play_again.png" class="img-thumbnail col-lg-2 col-md-2 col-sm-4 col-xs-8 col-lg-offset-5 col-md-offset-5 col-sm-offset-4 col-xs-offset-2 borderless noBg" alt="" />
+                        </button>
+                      </div>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <button  id="btn-back-to-main-menu-from-game-over" class="btn btn-warning col-lg-12 col-xs-12 col-md-12 col-sm-12 smallFont" style="font-family:Comix Loud">
+                        <img src="img/txt_main_menu.png" class="img-thumbnail col-lg-2 col-md-2 col-sm-4 col-xs-8 col-lg-offset-5 col-md-offset-5 col-sm-offset-4 col-xs-offset-2 borderless noBg" alt="" />
+                        </button>
+                      </div>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <button id="btn-score-post-online" class="btn-special-post btn btn-warning col-lg-12 col-xs-12 col-md-12 col-sm-12 " style="font-family:Comix Loud" >
+                        <img src="img/txt_post_score_online.png" class="img-thumbnail col-lg-4 col-md-6 col-sm-6 col-xs-12 col-lg-offset-4 col-md-offset-3 col-sm-offset-3 col-xs-offset-0 borderless noBg" alt="" />
+                        </button>
+                      </div>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <center><a href="https://twitter.com/share" class="twitter-share-button" data-via="" data-text="#TrollsTFchallenge I just took the Trolls TF Challenge! Now I challenge you to take this Challenge!" data-hashtag="TrollsTFchallenge" data-url="wwww.facebook.com" data-lang="en"></a></center>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- board-game-over END -->
+      </div>
+      <!--page-wrapper2 END -->
+      <!-- main menu and main game leaderboard --> 
+      <!-- page-wrapper START-->
+      <div id="page-wrapper"   style="position:relative;">
+        <!-- main-menu START-->
+        <div class="container-fluid row windowContainer" id="main-menu" style="position:relative;">
+          <div class="col-lg-12">
+            <img src="img/txt_title.png" alt="" class="img-thumbnail" style="margin:0 auto;display:block;background:none;border:0px;"/>
+            <img src="img/txt_challenge.png" alt="" class="img-thumbnail" style="margin:0 auto;display:block;background:none;border:0px;margin-top:10px;"/>
+            <img id="btn-play" src="img/btn-play.png" alt="" class="img-thumbnail" style="margin:0 auto;display:block;background:none;border:0px;margin-top:0px;"/>
+            <div class="row ">
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="background:none; border:0">	
+                <button id="btn-leaderboard" class="btn btn-primary col-lg-12 col-xs-12 col-md-12 col-sm-12 " style="font-family:Comix Loud" >
+                <img src="img/txt_leaderboard.png" class="img-thumbnail col-lg-6 col-md-6 col-sm-6 col-xs-8 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-2 borderless noBg" alt="" />
+                </button>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="background:none; border:0">	
+                <button id="btn-option" class="btn btn-warning col-lg-12 col-xs-12 col-md-12 col-sm-12 " style="font-family:Comix Loud" >
+                <img src="img/txt_option.png" class="img-thumbnail col-lg-6 col-md-6 col-sm-6 col-xs-8 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-2 borderless noBg" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- main-menu END-->
+        <!-- main-game START -->
+        <div class="row windowContainer" id="main-game" style="position:relative;">
+          <div class="col-sm-12 col-lg-12">
+            <div class="col-lg-12" style="margin-bottom:30px;">
+              <p style="display:inline-block;" class="fontComixLoud">SCORE:</p>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  fontComixLoud">
+                <!--<input type="text" name="" id="score" class="borderless noBg" style="color:#ffffff"/>-->
+                <h2 name="" id="score" class="borderless noBg" style="color:#ffffff"/></h2>
+              </div>
+            </div>
+            
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  fontComixLoud">
+              <h2 id="gameTimer" class="noBg borderLess" style="" /></h2>
+            </div>
+            
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="panel panel-board">
+                  <div class="panel-body">
+                    <p id="question" style="">
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-lg-12">
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="background:none; border:0">
+                <input id="btn-choice-1"  class="btn-choice btn btn-primary col-lg-12 col-xs-12 col-md-12 col-sm-12 " style="font-family:Comix Loud" type="button" value="" />
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="background:none; border:0">
+                <input id="btn-choice-2"  class="btn-choice btn btn-warning col-lg-12 col-xs-12 col-md-12 col-sm-12 " style="font-family:Comix Loud" type="button" value="" />
+              </div>
+              
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="background:none; border:0">
+                <input id="correct-answer"  class="displayNone btn-choice btn btn-primary col-lg-12 col-xs-12 col-md-12 col-sm-12 " style="font-family:Comix Loud" type="button" value="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- main-game END -->		
+        <!-- board-modal-leaderboar START -->
+        <div class="row windowContainer board" id="board-modal-leaderboard" style="position:relative">
+          <div class="col-sm-12 col-lg-12">
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="panel panel-board panel-red" >
+                  <div class="panel-body" style="background:none; border:0">
+                    <div class="col-lg-12">
+                      <img id="" class="img-thumbnail btn_close btn-back-to-main-menu col-lg-1 col-md-3 col-sm-2 col-xs-4 borderless noBg" src="img/btn_close.png" alt=""  style=""/>
+                      <h2 style="">TROLLS HALL OF FAME</h2>
+                      <div class="table-responsive" style="background:#a83626;border:0;">
+                        <table id="leaderboardTable"  class="table  table-striped"  style="text-align:left;padding:0">
+                          <thead >
+                            <tr >
+                              <th>RANK</th>
+                              <th>PLAYER</th>
+                              <th>SCORE</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- board-modal-leaderboar END -->
+      </div>
+      <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
+    <script type="text/javascript" src="js/jq.js"></script>
+    <script type="text/javascript" src="js/jq-custom.js"></script><!-- for functions -->
+    <script type="text/javascript" src="js/jq-custom-animation.js"></script><!-- for animation -->
+    <script src="js/jquery.transit.js"></script><!-- for animation -->
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+      	storeQuizArrayToLocalStorage();
+      	getLeaderboard();
+      	checkIfLogin();
+      	clearForms();
+      });
+    </script>
+  </body>
+</html>
